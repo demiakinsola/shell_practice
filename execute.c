@@ -46,5 +46,5 @@ pid_t fork_child(void)
 
 	if (child < 0)
 		return (-1);
-	return (child);
+	exit(0);
 }
