@@ -20,13 +20,17 @@ int main(void)
 		printf("$ ");
 		ret_bytes = getline(buffer, &bytes, stdin);
 		if (ret_bytes == -1) /* on failure/EOF */
+                {       
+                        free(buffer);
 			break;
+                }
 		while (buffer[index])
 		{
 			printf("%s", buffer[index]);
 			index++;
 		}
-		index = 0;
+		index = 0; /* for loop to run again */
 	}
+        free(buffer);
 	return (0);
 }
